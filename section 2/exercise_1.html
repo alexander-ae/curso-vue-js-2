@@ -1,0 +1,36 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <title></title>
+  <script src="../vue.js"></script>
+</head>
+
+<body>
+  <div id="exercise">
+    <input type="text" v-on:input='updateAge' placeholder="age">
+    <p>VueJS is pretty cool - {{ name }} ({{ age }})</p>
+    <p>{{ age * 3 }}</p>
+    <p>{{ randomNumber() }}</p>
+    <img v-bind:src="src" alt="enso">
+  </div>
+
+  <script>
+    new Vue({
+      el: '#exercise',
+      data: {
+        name: 'alexander',
+        age: '',
+        src: 'https://upload.wikimedia.org/wikipedia/commons/thumb/6/68/Enso.svg/1039px-Enso.svg.png'
+      },
+      methods:{
+        updateAge: function(){
+          this.age = event.target.value;
+        },
+        randomNumber: function(){
+          return Math.random()
+        }
+      }
+    })
+  </script>
+</body>
+</html>

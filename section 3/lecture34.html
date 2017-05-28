@@ -1,0 +1,22 @@
+<html>
+<head>
+    <script src="../vue.js"></script>
+</head>
+
+<body>
+    <div id="app">
+        <p v-if='show'>You can see me!</p>
+        <p v-else>Do you also see me?</p>
+        <input type="checkbox" v-model='show'>
+    </div>
+
+    <script>
+        new Vue({
+            el: '#app',
+            data: {
+                'show':true
+            },
+        })
+    </script>
+</body>
+</html>
